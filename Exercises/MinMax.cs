@@ -20,7 +20,11 @@ namespace Exercises
         public static int? LengthOfTheShortestWord(IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            if (words.Count() < 1)
+            {
+                return null;
+            }
+            return words.Min(word => word.Length);
         }
 
         //Coding Exercise 2
@@ -36,10 +40,13 @@ namespace Exercises
                is four, and there is a single four in this collection
             *for {} the result will be 0
          */
-        public static int CountOfLargestNumbers(IEnumerable<int> numbers)
+        public static int? CountOfLargestNumbers(IEnumerable<int> numbers)
         {
+            if (numbers.Count() < 1) {
+                return 0;
+            }
             //TODO your code goes here
-            throw new NotImplementedException();
+            return numbers.Count(n=> n==numbers.Max());
         }
 
         //Refactoring challenge
@@ -48,7 +55,7 @@ namespace Exercises
             IEnumerable<Person> owners)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return owners.Max(o=> o.Pets.Count(p=> p.PetType==PetType.Dog));
         }
 
         //do not modify this method

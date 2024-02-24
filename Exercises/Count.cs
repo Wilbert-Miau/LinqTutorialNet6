@@ -12,7 +12,7 @@ namespace Exercises
         public static int CountAllLongWords(IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return words.Count(w=> w.Length>10);
         }
 
         //Coding Exercise 2
@@ -31,15 +31,18 @@ namespace Exercises
         public static bool AreThereFewerOddThanEvenNumbers(IEnumerable<int> numbers)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            var allN = numbers.Count();
+            var even = numbers.Count(n => n % 2 == 0);
+            return even>(allN-even);
         }
 
         //Refactoring challenge
         //TODO implement this method
         public static bool IsAnySequenceTooLong_Refactored(IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            var count = 0;
+            return numberSequences.Any(n => n.Count()>maxLength);
+            
         }
 
         //do not modify this method
