@@ -1,5 +1,7 @@
 # LinqTutorial
+I fork this for improving my LINQ skills.
 
+"
 Hello! 
 
 My name is Krystyna and welcome to my GitHub.
@@ -38,5 +40,5 @@ Place a breakpoint in the place that you are interested in.
 
 Now, find the unit test that you want to run. To run it in the Debug mode, you can either right-click on it the the Test Explorer and select debug, or you can left click on the test marker just at the test body and select debug. Both places are shown in the image:
 
-![image](https://user-images.githubusercontent.com/89634343/218571108-b4cf876b-45a9-4c20-be73-1efd44dee9ad.png)
+![image](https://user-images.githubusercontent.com/89634343/218571108-b4cf876b-45a9-4c20-be73-1efd44dee9ad.png)"
 
