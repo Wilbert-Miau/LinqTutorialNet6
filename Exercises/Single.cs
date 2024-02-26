@@ -23,7 +23,9 @@ namespace Exercises
         public static string GetTheOnlyUpperCaseWord(IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //return words.Count(w=> w.All(char.IsUpper)) == 0? null : words.Single(w=> w.All(char.IsUpper));
+            return  words.SingleOrDefault(w => w.All(char.IsUpper));
+
         }
 
         /*
@@ -60,7 +62,7 @@ namespace Exercises
             IEnumerable<IEnumerable<int>> numberCollections)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return numberCollections.Single(x => x.Count()==1);
         }
 
         //Refactoring challenge
@@ -69,7 +71,7 @@ namespace Exercises
             IEnumerable<DateTime> dates, DayOfWeek dayOfWeek)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return dates.Count(d=> d.DayOfWeek==dayOfWeek)==1?dates.SingleOrDefault(d=>d.DayOfWeek==dayOfWeek ): null;
         }
 
         //do not modify this method

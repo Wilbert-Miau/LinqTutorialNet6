@@ -20,8 +20,17 @@ namespace Exercises
          */
         public static IEnumerable<int> TakeSome(IEnumerable<int> numbers)
         {
+            var quantity = numbers.Count();
             //TODO your code goes here
-            throw new NotImplementedException();
+
+            if (quantity < 10 && quantity > 3)
+                return numbers.Take(3);
+            if (quantity > 9 && quantity < 100)
+            {
+                return numbers.Take(30);
+            }
+            return numbers;
+            
         }
 
         //Coding Exercise 2
@@ -45,7 +54,8 @@ namespace Exercises
             IEnumerable<Pet> pets, int percent)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            int percentToQuantity= (pets.Count()*percent)/100;
+            return pets.OrderByDescending(p=>p.Weight).Take(percentToQuantity);
         }
 
         //Refactoring challenge
@@ -54,7 +64,7 @@ namespace Exercises
             IEnumerable<DateTime> dates)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return dates.TakeWhile(date=> date.Year<1901);
         }
 
         //do not modify this method
