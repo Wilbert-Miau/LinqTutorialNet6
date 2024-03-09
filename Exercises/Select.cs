@@ -26,6 +26,9 @@ namespace Exercises
         public static IEnumerable<int> GetNumbers(IEnumerable<object> objects)
         {
             //TODO your code goes here
+            //return objects.OfType<int>().Concat(objects.OfType<string>().Select(s=> {
+            //    int r;
+            //    return int.TryParse(s, out r) ? r : (int?)null;
             throw new NotImplementedException();
         }
 

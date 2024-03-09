@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Exercises
 {
@@ -29,11 +31,15 @@ namespace Exercises
         public static IEnumerable<string> AddStartAndEndMarkers(IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+
+            string start = "START";
+            string end = "END";
+            var endVal = words.Last() != end ? words.Append(end): words;
+            return endVal.First() != start ? endVal.Prepend(start) : endVal;
         }
 
         //Coding Exercise 2
-        /*
+        /* 
         Implement the RemoveDuplicatesFromStartAndEnd method, which given 
         a collection of ordered numbers, will remove the duplicate occurrences 
         of the first and the last number in the collection.
@@ -52,7 +58,10 @@ namespace Exercises
             IEnumerable<int> numbers)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            var first = numbers.FirstOrDefault();
+            var last = numbers.LastOrDefault();
+            var lastResolved = numbers.Where(n => n != first && n != last).Append(last);
+            return !numbers.Any() ? numbers : !lastResolved.Any() ? Enumerable.Empty<int>(): first != last ? lastResolved.Prepend(first) : lastResolved;
         }
 
         //Refactoring challenge
@@ -61,7 +70,7 @@ namespace Exercises
             IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            return words.TakeWhile(w => w != "The end").Append("END");
         }
 
         //do not modify this method

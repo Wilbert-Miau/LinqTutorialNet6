@@ -29,7 +29,8 @@ namespace Exercises
             int initialYear, int yearsCount)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+           var i =  Enumerable.Range(initialYear, yearsCount).ToDictionary(x=> x, x=> new DateTime(x,12,31).DayOfWeek.ToString());
+            return i;
         }
 
         //Coding Exercise 2
@@ -54,7 +55,11 @@ namespace Exercises
         public static string BuildTree(int levels)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            string result = string.Join("\n",Enumerable.Range(1, levels).Select(x => new String('*', x)));
+
+
+
+            return result;
         }
 
         //Refactoring challenge
